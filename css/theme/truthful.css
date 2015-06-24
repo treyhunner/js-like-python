@@ -215,7 +215,7 @@ section.has-dark-background a:hover {
   -moz-transition: all 0.15s linear;
   transition: all 0.15s linear; }
 
-.reveal a:hover img {
+.reveal a:hover img:not(.no-style) {
   background: rgba(255, 255, 255, 0.2);
   border-color: #630FB7;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
