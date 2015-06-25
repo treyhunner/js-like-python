@@ -134,22 +134,28 @@ body {
   word-wrap: break-word;
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3); }
 
+.reveal pre code {
+  padding: 10px;
+}
+
 pre.python code {
+  box-sizing: border-box;
   background-image: url('../../python-logo.svg');
   background-repeat: no-repeat;
   background-position: right top;
   background-size: contain;
-  background-size: 50px auto;
-  min-height: 50px;
+  background-size: 60px auto;
+  min-height: 70px;
 }
 
 pre.javascript code {
+  box-sizing: border-box;
   background-image: url('../../js-logo.svg');
   background-repeat: no-repeat;
   background-position: right top;
   background-size: contain;
-  background-size: 50px auto;
-  min-height: 50px;
+  background-size: 60px auto;
+  min-height: 70px;
 }
 
 .reveal code {
