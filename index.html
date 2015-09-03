@@ -1,283 +1,283 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
 
-		<title>JS is Becoming Pythonic</title>
+    <title>JS is Becoming Pythonic</title>
 
-		<meta name="description" content="With new ECMASript developments, JavaScript is becoming more like Python.">
-		<meta name="author" content="Trey Hunner">
+    <meta name="description" content="With new ECMASript developments, JavaScript is becoming more like Python.">
+    <meta name="author" content="Trey Hunner">
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/truthful.css" id="theme">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/truthful.css" id="theme">
 
-		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/github.css">
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/github.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
 
-	<body>
+  <body>
 
-		<div class="reveal">
+    <div class="reveal">
 
-			<div class="slides">
+      <div class="slides">
         <section data-background="#ffffff" data-background-transition="zoom" data-transition="zoom" data-transition-speed="fast">
-					<h1>JavaScript is Becoming Pythonic</h1>
-					<h3>ECMAScript 2015 and Beyond</h3>
-					<p>
-						<small><a href="http://treyhunner.com">Trey Hunner</a> / <a href="https://twitter.com/treyhunner">@treyhunner</a></small>
-					</p>
-					<aside class="notes" data-markdown>
-						My name is Trey.  I'm going to show you how JavaScript is becoming more like Python.
+          <h1>JavaScript is Becoming Pythonic</h1>
+          <h3>ECMAScript 2015 and Beyond</h3>
+          <p>
+            <small><a href="http://treyhunner.com">Trey Hunner</a> / <a href="https://twitter.com/treyhunner">@treyhunner</a></small>
+          </p>
+          <aside class="notes" data-markdown>
+            My name is Trey.  I'm going to show you how JavaScript is becoming more like Python.
 
-						You will probably not understand every code example, but hopefully you'll learn some new things about JavaScript and you might learn a few things about Python too.
+            You will probably not understand every code example, but hopefully you'll learn some new things about JavaScript and you might learn a few things about Python too.
 
-						I have a lot to cover, so I'll be going a little quickly.  If you miss anything, don't worry.  I'll post a link to the slides afterward.
-					</aside>
-				</section>
+            I have a lot to cover, so I'll be going a little quickly.  If you miss anything, don't worry.  I'll post a link to the slides afterward.
+          </aside>
+        </section>
 
-				<section data-transition="fade-in slide-out">
-					<h2>Multi-Line Strings</h2>
-					<p>
-					<pre class="python"><code data-trim>
+        <section data-transition="fade-in slide-out">
+          <h2>Multi-Line Strings</h2>
+          <p>
+          <pre class="python"><code data-trim>
 poem = """Programming is fun
 Except for syntax errors
 Missing curly brace"""
           </code></pre>
-					<pre class="javascript"><code data-trim>
+          <pre class="javascript"><code data-trim>
 var poem = `Programming is fun
 Except for syntax errors
 Missing curly brace`;
           </code></pre>
-					</p>
-					<aside class="notes" data-markdown>
-						JavaScript now has multi-line strings, just like Python.  They use a backtick instead of Python's familiar triple quotes.
-					</aside>
-				</section>
+          </p>
+          <aside class="notes" data-markdown>
+            JavaScript now has multi-line strings, just like Python.  They use a backtick instead of Python's familiar triple quotes.
+          </aside>
+        </section>
 
-				<section>
-					<h2>String Interpolation</h2>
-					<p>
-					<pre class="python"><code data-trim>
+        <section>
+          <h2>String Interpolation</h2>
+          <p>
+          <pre class="python"><code data-trim>
 from datetime import datetime
 date = datetime.now()
 print("The year is {date.year}".format(date=date))
           </code></pre>
-					<pre class="javascript"><code data-trim>
+          <pre class="javascript"><code data-trim>
 var date = new Date();
 console.log(`The year is ${date.getFullYear()}`);
           </code></pre>
-					</p>
-					<aside class="notes" data-markdown>
-						There's also string interpolation. This is like Python's format function but even more powerful.
+          </p>
+          <aside class="notes" data-markdown>
+            There's also string interpolation. This is like Python's format function but even more powerful.
 
-						This code would print "The year is 2015".
-					</aside>
-				</section>
+            This code would print "The year is 2015".
+          </aside>
+        </section>
 
-				<section>
-					<h2>Arrow Function Syntax</h2>
-					<p>
-					<pre class="python"><code data-trim>
+        <section>
+          <h2>Arrow Function Syntax</h2>
+          <p>
+          <pre class="python"><code data-trim>
 numbers = [1, 2, 3, 4]
 squares = map(lambda x: x * x, numbers)
           </code></pre>
-					<pre class="javascript"><code data-trim>
+          <pre class="javascript"><code data-trim>
 var numbers = [1, 2, 3, 4];
 var squares = numbers.map(x => x * x);
           </code></pre>
-					</p>
-					<aside class="notes" data-markdown>
-						JavaScript has always had more mature anonymous functions than Python, but one thing it didn't have was a shortened function syntax.
+          </p>
+          <aside class="notes" data-markdown>
+            JavaScript has always had more mature anonymous functions than Python, but one thing it didn't have was a shortened function syntax.
 
-						JavaScript now has an arrow syntax for defining functions.  This new syntax is even more succinct than Python's lambda.
-					</aside>
-				</section>
+            JavaScript now has an arrow syntax for defining functions.  This new syntax is even more succinct than Python's lambda.
+          </aside>
+        </section>
 
-				<section>
-					<section>
-						<h2>Iterable Unpacking</h2>
-						<p>
-						<pre class="python"><code data-trim>
+        <section>
+          <section>
+            <h2>Iterable Unpacking</h2>
+            <p>
+            <pre class="python"><code data-trim>
 coordinate = (1, 4, 2)
 x, y, z = coordinate
-						</code></pre>
-						<pre class="javascript"><code data-trim>
+            </code></pre>
+            <pre class="javascript"><code data-trim>
 var coordinate = [1, 4, 2];
 var [x, y, z] = coordinate;
-						</code></pre>
-						</p>
-						<aside class="notes" data-markdown>
-							Just like Python, JavaScript now has iterable unpacking.  You can unpack arrays into multiple variables and you can also use this for multiple assignment and for swapping variables.
+            </code></pre>
+            </p>
+            <aside class="notes" data-markdown>
+              Just like Python, JavaScript now has iterable unpacking.  You can unpack arrays into multiple variables and you can also use this for multiple assignment and for swapping variables.
 
-							Here, x, y, and z would be 1, 4, and 2.
-						</aside>
-					</section>
-				</section>
+              Here, x, y, and z would be 1, 4, and 2.
+            </aside>
+          </section>
+        </section>
 
-				<section>
-					<section>
-						<h2>Spread Operator</h2>
-						<p>
-						<pre class="python"><code data-trim>
+        <section>
+          <section>
+            <h2>Spread Operator</h2>
+            <p>
+            <pre class="python"><code data-trim>
 import datetime
 date_fields = (2015, 6, 12);
 date = datetime.date(*date_fields)
-						</code></pre>
-						<pre class="javascript"><code data-trim>
+            </code></pre>
+            <pre class="javascript"><code data-trim>
 var dateFields = [2015, 5, 12];
 var date = new Date(...dateFields);
-						</code></pre>
-						</p>
-						<aside class="notes" data-markdown>
-							JavaScript now has a spread operator.  This is similar to Python's argument unpacking operator.
+            </code></pre>
+            </p>
+            <aside class="notes" data-markdown>
+              JavaScript now has a spread operator.  This is similar to Python's argument unpacking operator.
 
-							You can use it to unpack an array into the arguments of a function call.
-						</aside>
-					</section>
-					<section>
-						<h2>Capture Remaining Values</h2>
-						<p>
-						<pre class="python"><code data-trim>
+              You can use it to unpack an array into the arguments of a function call.
+            </aside>
+          </section>
+          <section>
+            <h2>Capture Remaining Values</h2>
+            <p>
+            <pre class="python"><code data-trim>
 numbers = [1, 2, 3, 4]
 first, *remaining = numbers
-						</code></pre>
-						<pre class="javascript"><code data-trim>
+            </code></pre>
+            <pre class="javascript"><code data-trim>
 var numbers = [1, 2, 3, 4];
 var [first, ...remaining] = numbers;
-						</code></pre>
-						</p>
-						<aside class="notes" data-markdown>
-							You can combine the spread operator with iterable unpacking to capture remaining values in an array.
-							
-							For example here the variable `remaining` would be the array `[2, 3, 4]`.
-						</aside>
-					</section>
-					<section>
-						<h2>Combine Arrays</h2>
-						<p>
-						<pre class="python"><code data-trim>
+            </code></pre>
+            </p>
+            <aside class="notes" data-markdown>
+              You can combine the spread operator with iterable unpacking to capture remaining values in an array.
+              
+              For example here the variable `remaining` would be the array `[2, 3, 4]`.
+            </aside>
+          </section>
+          <section>
+            <h2>Combine Arrays</h2>
+            <p>
+            <pre class="python"><code data-trim>
 first = [1, 2]
 second = [3, 4]
 combined = first + second
-						</code></pre>
-						<pre class="javascript"><code data-trim>
+            </code></pre>
+            <pre class="javascript"><code data-trim>
 var first = [1, 2];
 var second = [3, 4];
 var combined = [...first, ...second];
-						</code></pre>
-						</p>
-						<aside class="notes" data-markdown>
-							You can also use this operator to unpack one array inside of another array.
+            </code></pre>
+            </p>
+            <aside class="notes" data-markdown>
+              You can also use this operator to unpack one array inside of another array.
 
-							In this example `combined` would be the array `[1, 2, 3, 4]`.
-						</aside>
-					</section>
-				</section>
+              In this example `combined` would be the array `[1, 2, 3, 4]`.
+            </aside>
+          </section>
+        </section>
 
-				<section>
-					<h2>Rest Operator</h2>
-					<p>
-					<pre class="python"><code data-trim>
+        <section>
+          <h2>Rest Operator</h2>
+          <p>
+          <pre class="python"><code data-trim>
 from functools import reduce
 def product(*numbers):
     return reduce(lambda x, y: x * y, numbers)
 print(product(1, 2, 3, 4))
           </code></pre>
-					<pre class="javascript"><code data-trim>
+          <pre class="javascript"><code data-trim>
 function product(...numbers) {
     return numbers.reduce((x, y) => x * y);
 }
 console.log(product(1, 2, 3, 4));
           </code></pre>
-					</p>
-						<aside class="notes" data-markdown>
-							The "rest" operator is kind of the opposite of the "spread" operator.
+          </p>
+            <aside class="notes" data-markdown>
+              The "rest" operator is kind of the opposite of the "spread" operator.
 
-							This allows us to make functions that takes a variable number of arguments.
+              This allows us to make functions that takes a variable number of arguments.
 
-							For example our `product` function here takes any number of arguments.
-						</aside>
-				</section>
+              For example our `product` function here takes any number of arguments.
+            </aside>
+        </section>
 
-				<section>
-					<section>
-						<h2>Default Parameters</h2>
-						<p>
-						<pre class="python"><code data-trim>
+        <section>
+          <section>
+            <h2>Default Parameters</h2>
+            <p>
+            <pre class="python"><code data-trim>
 from math import pow
 def power(number, exponent=2):
     return pow(number, exponent)
-					 </code></pre>
-						<pre class="javascript"><code data-trim>
+           </code></pre>
+            <pre class="javascript"><code data-trim>
 function power(number, exponent=2) {
     return Math.power(number, exponent);
 }
-						</code></pre>
-						</p>
-						<aside class="notes" data-markdown>
-							JavaScript now allows you to specify default parameter values.
+            </code></pre>
+            </p>
+            <aside class="notes" data-markdown>
+              JavaScript now allows you to specify default parameter values.
 
-							This **does not** mean JavaScript has keyword arguments.  It doesn't.  These are just default values for positional arguments.
-						</aside>
-					</section>
-					<section>
-						<h2>Evaluated at Call-time!</h2>
-						<p>
-						<pre class="python"><code data-trim>
+              This **does not** mean JavaScript has keyword arguments.  It doesn't.  These are just default values for positional arguments.
+            </aside>
+          </section>
+          <section>
+            <h2>Evaluated at Call-time!</h2>
+            <p>
+            <pre class="python"><code data-trim>
 from math import pow
 from random import random
 # This doesn't work like you'd expect!!
 def power(number, exponent=random()):
     return pow(number, exponent)
-					 </code></pre>
-						<pre class="javascript"><code data-trim>
+           </code></pre>
+            <pre class="javascript"><code data-trim>
 function power(number, exponent=Math.random()) {
     return Math.power(number, exponent);
 }
-						</code></pre>
-						</p>
-						<aside class="notes" data-markdown>
-							In Python, default argument expressions are evaluated when the function is defined.
-							
-							But in JavaScript, default parameter expressions are evaluated when a function is called.  This allows for some cool default expressions that wouldn't work as expected in Python.
+            </code></pre>
+            </p>
+            <aside class="notes" data-markdown>
+              In Python, default argument expressions are evaluated when the function is defined.
+              
+              But in JavaScript, default parameter expressions are evaluated when a function is called.  This allows for some cool default expressions that wouldn't work as expected in Python.
 
-							For example, in our JavaScript code here, every time the `power` function is called without an exponent, it gets a new random number for the exponent.  In the Python code, `exponent` would always default to the same random number.
-						</aside>
-					</section>
-				</section>
+              For example, in our JavaScript code here, every time the `power` function is called without an exponent, it gets a new random number for the exponent.  In the Python code, `exponent` would always default to the same random number.
+            </aside>
+          </section>
+        </section>
 
-				<section>
-					<section>
-						<h2>Classes</h2>
-						<p>
-						<pre class="python"><code data-trim>
+        <section>
+          <section>
+            <h2>Classes</h2>
+            <p>
+            <pre class="python"><code data-trim>
 class Point:
     def __init__(self, x, y):
         self.x = x
         self.y = y
     def __str__(self):
         return "({x}, {y})".format(x=self.x, y=self.y)
-						</code></pre>
-						<pre class="javascript"><code data-trim>
+            </code></pre>
+            <pre class="javascript"><code data-trim>
 class Point {
     constructor(x, y) {
         this.x = x;
@@ -287,20 +287,20 @@ class Point {
         return `(${this.x}, ${this.y})`;
     }
 }
-						</code></pre>
-						</p>
-						<aside class="notes" data-markdown>
-							JavaScript did not used to have a class syntax.  It does now.
-							
-							This is what it looks like.
+            </code></pre>
+            </p>
+            <aside class="notes" data-markdown>
+              JavaScript did not used to have a class syntax.  It does now.
+              
+              This is what it looks like.
 
-							Of course no class implementation is complete without a properly-loaded foot gun.  So JavaScript also supports...
-						</aside>
-					</section>
-					<section>
-						<h2>Sub-Classes</h2>
-						<p>
-						<pre class="python"><code data-trim>
+              Of course no class implementation is complete without a properly-loaded foot gun.  So JavaScript also supports...
+            </aside>
+          </section>
+          <section>
+            <h2>Sub-Classes</h2>
+            <p>
+            <pre class="python"><code data-trim>
 class ColorPoint(Point):
     def __init__(self, x, y, color):
         super().__init__(x, y)
@@ -310,8 +310,8 @@ class ColorPoint(Point):
             super=super().__str__(),
             color=self.color
         )
-						</code></pre>
-						<pre class="javascript"><code data-trim>
+            </code></pre>
+            <pre class="javascript"><code data-trim>
 class ColorPoint extends Point {
     constructor(x, y, color) {
         super(x, y);
@@ -321,21 +321,21 @@ class ColorPoint extends Point {
         return `${super.toString()} in ${this.color}`;
     }
 }
-						</code></pre>
-						</p>
-						<aside class="notes" data-markdown>
-							Inheritance.
+            </code></pre>
+            </p>
+            <aside class="notes" data-markdown>
+              Inheritance.
 
-							I actually think the "super" syntax is a little more elegant in JavaScript than it is in Python.
-						</aside>
-					</section>
-				</section>
+              I actually think the "super" syntax is a little more elegant in JavaScript than it is in Python.
+            </aside>
+          </section>
+        </section>
 
-				<section>
-					<section>
-						<h2>Getters &amp; Setters</h2>
-						<p>
-						<pre class="python"><code data-trim>
+        <section>
+          <section>
+            <h2>Getters &amp; Setters</h2>
+            <p>
+            <pre class="python"><code data-trim>
 from math import sqrt
 class SmartPoint(Point):
     @property
@@ -345,8 +345,8 @@ class SmartPoint(Point):
     def hypotenuse(self, z):
         # Sily setter example
         self.y = sqrt(z ** 2 - self.x ** 2)
-						</code></pre>
-						<pre class="javascript"><code data-trim>
+            </code></pre>
+            <pre class="javascript"><code data-trim>
 class SmartPoint extends Point {
     get hypotenuse() {
         return Math.sqrt(this.x ** 2 + this.y ** 2);
@@ -356,141 +356,141 @@ class SmartPoint extends Point {
         this.y = Math.sqrt(z ** 2 - this.x ** 2);
     }
 }
-						</code></pre>
-						</p>
-						<aside class="notes" data-markdown>
-							JavaScript also supports getters and setters now.  These work like Python's "property" decorator but I like the syntax a little better.
-						</aside>
-					</section>
-					<section>
-						<h2>Using Getters &amp; Setters</h2>
-						<p>
-						<pre class="python"><code data-trim>
+            </code></pre>
+            </p>
+            <aside class="notes" data-markdown>
+              JavaScript also supports getters and setters now.  These work like Python's "property" decorator but I like the syntax a little better.
+            </aside>
+          </section>
+          <section>
+            <h2>Using Getters &amp; Setters</h2>
+            <p>
+            <pre class="python"><code data-trim>
 point = SmartPoint(3, 4)
-print(point.hypotenuse)	# Prints 5.0
+print(point.hypotenuse)  # Prints 5.0
 point.hypotenuse = 6
-print(point)	# Prints (3, 5.196152422706632)
-						</code></pre>
-						<pre class="javascript"><code data-trim>
+print(point)  # Prints (3, 5.196152422706632)
+            </code></pre>
+            <pre class="javascript"><code data-trim>
 var point = new SmartPoint(3, 4);
-console.log(point.hypotenuse);	// Prints 5
+console.log(point.hypotenuse);  // Prints 5
 point.hypotenuse = 6;
-console.log(point.toString());	// Prints (3, 5.196152422706632)
-						</code></pre>
-						</p>
-						<aside class="notes" data-markdown>
-							Getters and setters allow you to make a class attribute with special behavior that defines what you see when you access it and what happens when you change it.
-						</aside>
-					</section>
-				</section>
+console.log(point.toString());  // Prints (3, 5.196152422706632)
+            </code></pre>
+            </p>
+            <aside class="notes" data-markdown>
+              Getters and setters allow you to make a class attribute with special behavior that defines what you see when you access it and what happens when you change it.
+            </aside>
+          </section>
+        </section>
 
-				<section>
-					<h2>Decorators</h2>
-					<p>
-					<pre class="python"><code data-trim>
+        <section>
+          <h2>Decorators</h2>
+          <p>
+          <pre class="python"><code data-trim>
 @memoize
 def get_divisors(number):
     return big_computation(number)
           </code></pre>
-					<pre class="javascript"><code data-trim>
+          <pre class="javascript"><code data-trim>
 @memoize
 function getDivisors(number) {
     return bigComputation(number);
 }
           </code></pre>
-					</p>
-					<aside class="notes" data-markdown>
-						JavaScript has decorators now, just like Python.  It *even* uses the same syntax.
+          </p>
+          <aside class="notes" data-markdown>
+            JavaScript has decorators now, just like Python.  It *even* uses the same syntax.
 
-						If you have never used decorators before, look them up.  They're kind of neat.
-					</aside>
-				</section>
+            If you have never used decorators before, look them up.  They're kind of neat.
+          </aside>
+        </section>
 
-				<section>
-					<h2>Modules</h2>
-					<p>
-					<pre class="python"><code data-trim>
+        <section>
+          <h2>Modules</h2>
+          <p>
+          <pre class="python"><code data-trim>
 import urls
 from utils import jsonify, memoize
          </code></pre>
-					<pre class="javascript"><code data-trim>
+          <pre class="javascript"><code data-trim>
 import urls from 'urls.js';
 import {jsonify, memoize} from 'utils.js';
           </code></pre>
-					</p>
-						<aside class="notes" data-markdown>
-							JavaScript **actually** has modules now.  They're properly namespaced and they work pretty similarly to the way modules work in Python.  The syntax is a bit different though.
-						</aside>
-				</section>
+          </p>
+            <aside class="notes" data-markdown>
+              JavaScript **actually** has modules now.  They're properly namespaced and they work pretty similarly to the way modules work in Python.  The syntax is a bit different though.
+            </aside>
+        </section>
 
-				<section>
-					<h2>Browser Compatibility</h2>
+        <section>
+          <h2>Browser Compatibility</h2>
           <iframe src="es6-compat-table.html" width="100%" height="500px"></iframe>
-						<aside class="notes" data-markdown>
-							Most of these features are not currently supported by web browsers.  Even once new browsers add support, you'll need to wait for your users to upgrade.
+            <aside class="notes" data-markdown>
+              Most of these features are not currently supported by web browsers.  Even once new browsers add support, you'll need to wait for your users to upgrade.
 
-							However, you **can** start using these features today.
-						</aside>
-				</section>
+              However, you **can** start using these features today.
+            </aside>
+        </section>
 
-				<section data-background="#f5da55" data-background-transition="fade" data-transition="zoom-in slide-out">
+        <section data-background="#f5da55" data-background-transition="fade" data-transition="zoom-in slide-out">
           <a href="http://babeljs.io/"><img src="babel-logo.svg" class="no-style"></a>
-					<h3>Use next generation JavaScript, today.</h3>
-					<aside class="notes" data-markdown>
-						You just need to compile your new JavaScript code into code that uses the old syntax.
+          <h3>Use next generation JavaScript, today.</h3>
+          <aside class="notes" data-markdown>
+            You just need to compile your new JavaScript code into code that uses the old syntax.
 
-						With Babel you can transpile your code from the new syntax to the old, maintaining support for all browsers.
-					</aside>
-				</section>
+            With Babel you can transpile your code from the new syntax to the old, maintaining support for all browsers.
+          </aside>
+        </section>
 
-				<section style="text-align: left;" data-background="#663399" data-background-transition="slide" data-transition="slide">
+        <section style="text-align: left;" data-background="#663399" data-background-transition="slide" data-transition="slide">
           <h1>Final</h1>
           <p>
-						<small><a href="http://treyhunner.com">Trey Hunner</a> / <a href="https://twitter.com/treyhunner">@treyhunner</a></small>
-					</p>
+            <small><a href="http://treyhunner.com">Trey Hunner</a> / <a href="https://twitter.com/treyhunner">@treyhunner</a></small>
+          </p>
           <p>
-					<small>
-						Web consultant available for hire
-						<br>
-						<a href="http://truthful.technology/">http://truthful.technology</a>
-					</small>
-					</p>
-					<aside class="notes" data-markdown>
-						Any questions?
-					</aside>
-				</section>
+          <small>
+            Web consultant available for hire
+            <br>
+            <a href="http://truthful.technology/">http://truthful.technology</a>
+          </small>
+          </p>
+          <aside class="notes" data-markdown>
+            Any questions?
+          </aside>
+        </section>
 
-			</div>
+      </div>
 
-		</div>
+    </div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
 
-		<script>
+    <script>
 
-			// Full list of configuration options available at:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
 
-				// Optional reveal.js plugins
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
-				]
-			});
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
 
-		</script>
+    </script>
 
-	</body>
+  </body>
 </html>

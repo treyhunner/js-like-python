@@ -1,0 +1,6 @@
+[*]
+indent_style = tab
+
+[*.{css,html}]
+indent_style = space
+indent_size = 2
