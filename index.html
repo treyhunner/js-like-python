@@ -167,7 +167,7 @@ var [first, ...remaining] = numbers;
             </p>
             <aside class="notes" data-markdown>
               You can combine the spread operator with iterable unpacking to capture remaining values in an array.
-              
+
               For example here the variable `remaining` would be the array `[2, 3, 4]`.
             </aside>
           </section>
@@ -257,7 +257,7 @@ function power(number, exponent=Math.random()) {
             </p>
             <aside class="notes" data-markdown>
               In Python, default argument expressions are evaluated when the function is defined.
-              
+
               But in JavaScript, default parameter expressions are evaluated when a function is called.  This allows for some cool default expressions that wouldn't work as expected in Python.
 
               For example, in our JavaScript code here, every time the `power` function is called without an exponent, it gets a new random number for the exponent.  In the Python code, `exponent` would always default to the same random number.
@@ -291,7 +291,7 @@ class Point {
             </p>
             <aside class="notes" data-markdown>
               JavaScript did not used to have a class syntax.  It does now.
-              
+
               This is what it looks like.
 
               Of course no class implementation is complete without a properly-loaded foot gun.  So JavaScript also supports...
