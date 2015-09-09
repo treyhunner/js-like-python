@@ -298,26 +298,6 @@ function mostDifference(...numbers) {
           This code example shows both the "rest" operator used once and "spread" operator used twice.
         </aside>
       </section>
-      <!--
-          <section>
-            <h2>Capture Remaining Values</h2>
-            <p>
-            <pre class="python"><code data-trim>
-numbers = [1, 2, 3, 4]
-first, *remaining = numbers
-            </code></pre>
-            <pre class="javascript"><code data-trim>
-let numbers = [1, 2, 3, 4];
-let [first, ...remaining] = numbers;
-            </code></pre>
-            </p>
-            <aside class="notes" data-markdown>
-              You can combine the spread operator with iterable unpacking to capture remaining values in an array.
-
-              For example here the variable `remaining` would be the array `[2, 3, 4]`.
-            </aside>
-          </section>
-          -->
       <section>
         <h2>Combine Arrays</h2>
         <p>
@@ -360,32 +340,6 @@ function greet(name='world') {
           This **does not** mean JavaScript has keyword arguments.  It doesn't.  These are just default values for positional arguments.
         </aside>
       </section>
-      <!--
-          <section>
-            <h2>Evaluated at Call-time!</h2>
-            <p>
-            <pre class="python"><code data-trim>
-from math import pow
-from random import random
-# This doesn't work like you'd expect!!
-def power(number, exponent=random()):
-    return pow(number, exponent)
-           </code></pre>
-            <pre class="javascript"><code data-trim>
-function power(number, exponent=Math.random()) {
-    return Math.power(number, exponent);
-}
-            </code></pre>
-            </p>
-            <aside class="notes" data-markdown>
-              In Python, default argument expressions are evaluated when the function is defined.
-
-              But in JavaScript, default parameter expressions are evaluated when a function is called.  This allows for some cool default expressions that wouldn't work as expected in Python.
-
-              For example, in our JavaScript code here, every time the `power` function is called without an exponent, it gets a new random number for the exponent.  In the Python code, `exponent` would always default to the same random number.
-            </aside>
-          </section>
-          -->
     </section>
 
     <section>
@@ -408,61 +362,6 @@ let [x, y, z] = coordinate;
         </aside>
       </section>
     </section>
-
-    <!--
-        <section>
-          <section>
-            <h2>Getters &amp; Setters</h2>
-            <p>
-            <pre class="python"><code data-trim>
-from math import sqrt
-class SmartPoint(Point):
-    @property
-    def hypotenuse(self):
-        return sqrt(self.x ** 2 + self.y ** 2)
-    @hypotenuse.setter
-    def hypotenuse(self, z):
-        # Sily setter example
-        self.y = sqrt(z ** 2 - self.x ** 2)
-            </code></pre>
-            <pre class="javascript"><code data-trim>
-class SmartPoint extends Point {
-    get hypotenuse() {
-        return Math.sqrt(this.x ** 2 + this.y ** 2);
-    }
-    set hypotenuse(z) {
-        // Silly setter example
-        this.y = Math.sqrt(z ** 2 - this.x ** 2);
-    }
-}
-            </code></pre>
-            </p>
-            <aside class="notes" data-markdown>
-              JavaScript also supports getters and setters now.  These work like Python's "property" decorator but I like the syntax a little better.
-            </aside>
-          </section>
-          <section>
-            <h2>Using Getters &amp; Setters</h2>
-            <p>
-            <pre class="python"><code data-trim>
-point = SmartPoint(3, 4)
-print(point.hypotenuse)  # Prints 5.0
-point.hypotenuse = 6
-print(point)  # Prints (3, 5.196152422706632)
-            </code></pre>
-            <pre class="javascript"><code data-trim>
-let point = new SmartPoint(3, 4);
-console.log(point.hypotenuse);  // Prints 5
-point.hypotenuse = 6;
-console.log(point.toString());  // Prints (3, 5.196152422706632)
-            </code></pre>
-            </p>
-            <aside class="notes" data-markdown>
-              Getters and setters allow you to make a class attribute with special behavior that defines what you see when you access it and what happens when you change it.
-            </aside>
-          </section>
-        </section>
-        -->
 
     <section>
       <h2>Decorators</h2>
@@ -501,70 +400,58 @@ import {jsonify, memoize} from 'utils.js';
       </aside>
     </section>
 
-        <!--
-        <section>
-          <h2>Browser Compatibility</h2>
-          <iframe src="es6-compat-table.html" width="100%" height="500px"></iframe>
-            <aside class="notes" data-markdown>
-              Most of these features are not currently supported by web browsers.  Even once new browsers add support, you'll need to wait for your users to upgrade.
+    <section data-background="#f5da55" data-background-transition="fade" data-transition="zoom-in zoom-out">
+      <h1>Go Forth and Babel</h1>
+      <p>Learn ES2015: <a href="https://babeljs.io/docs/learn-es2015/">https://babeljs.io/docs/learn-es2015/</a></p>
+      <p>Try it out: <a href="http://babeljs.io/repl/">http://babeljs.io/repl</a></p>
+      <aside class="notes" data-markdown>
+        So I just showed you a small handful of new features supported by JavaScript.
 
-              However, you **can** start using these features today.
-            </aside>
-        </section>
-        -->
+        You can learn more about Babel and try it out right from your web browser by going to the Babel website.
+      </aside>
+    </section>
 
-        <section data-background="#f5da55" data-background-transition="fade" data-transition="zoom-in zoom-out">
-          <h1>Go Forth and Babel</h1>
-          <p>Learn ES2015: <a href="https://babeljs.io/docs/learn-es2015/">https://babeljs.io/docs/learn-es2015/</a></p>
-          <p>Try it out: <a href="http://babeljs.io/repl/">http://babeljs.io/repl</a></p>
-          <aside class="notes" data-markdown>
-            So I just showed you a small handful of new features supported by JavaScript.
+    <section style="text-align: left;" data-background="#663399" data-background-transition="slide" data-transition="slide">
+      <h1>Final</h1>
+      <p>
+        <small><a href="http://treyhunner.com">Trey Hunner</a> / <a href="https://twitter.com/treyhunner">@treyhunner</a></small>
+      </p>
+      <aside class="notes" data-markdown>
+        That's all folks.
+      </aside>
+    </section>
 
-            You can learn more about Babel and try it out right from your web browser by going to the Babel website.
-          </aside>
-        </section>
+  </div>
 
-        <section style="text-align: left;" data-background="#663399" data-background-transition="slide" data-transition="slide">
-          <h1>Final</h1>
-          <p>
-            <small><a href="http://treyhunner.com">Trey Hunner</a> / <a href="https://twitter.com/treyhunner">@treyhunner</a></small>
-          </p>
-          <aside class="notes" data-markdown>
-            That's all folks.
-          </aside>
-        </section>
+</div>
 
-      </div>
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
 
-    </div>
+<script>
 
-    <script src="lib/js/head.min.js"></script>
-    <script src="js/reveal.js"></script>
+  // Full list of configuration options available at:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
 
-    <script>
+    transition: 'slide', // none/fade/slide/convex/concave/zoom
 
-      // Full list of configuration options available at:
-      // https://github.com/hakimel/reveal.js#configuration
-      Reveal.initialize({
-        controls: true,
-        progress: true,
-        history: true,
-        center: true,
+    // Optional reveal.js plugins
+    dependencies: [
+      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'plugin/zoom-js/zoom.js', async: true },
+      { src: 'plugin/notes/notes.js', async: true }
+    ]
+  });
 
-        transition: 'slide', // none/fade/slide/convex/concave/zoom
+</script>
 
-        // Optional reveal.js plugins
-        dependencies: [
-          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-          { src: 'plugin/zoom-js/zoom.js', async: true },
-          { src: 'plugin/notes/notes.js', async: true }
-        ]
-      });
-
-    </script>
-
-  </body>
+</body>
 </html>
