@@ -448,7 +448,8 @@ import {jsonify, memoize} from 'utils.js';
       { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
       { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
       { src: 'plugin/zoom-js/zoom.js', async: true },
-      { src: 'plugin/notes/notes.js', async: true }
+      { src: 'plugin/notes/notes.js', async: true },
+      { src: 'plugin/title-footer/title-footer.js', async: true, callback: function() { title_footer.initialize("treyhunner.com/js-like-python", "transparent"); } },
     ]
   });
 
