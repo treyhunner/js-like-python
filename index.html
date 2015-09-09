@@ -16,6 +16,7 @@
 
 <link rel="stylesheet" href="css/reveal.css">
 <link rel="stylesheet" href="css/theme/truthful.css" id="theme">
+<link rel="stylesheet" href="plugin/title-footer/title-footer.css">
 
 <!-- Code syntax highlighting -->
 <link rel="stylesheet" href="lib/css/github.css">
@@ -39,7 +40,7 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 <div class="reveal">
 
   <div class="slides">
-    <section data-background="#ffffff" data-background-transition="zoom" data-transition="zoom" data-transition-speed="fast">
+    <section data-state="no-title-footer" data-background="#ffffff" data-background-transition="zoom" data-transition="zoom" data-transition-speed="fast">
       <h1>JavaScript</h1>
       <h4>Slightly more like Python</h4>
       <p>
@@ -412,8 +413,9 @@ import {jsonify, memoize} from 'utils.js';
       </aside>
     </section>
 
-    <section style="text-align: left;" data-background="#663399" data-background-transition="slide" data-transition="slide">
+    <section style="text-align: left;" data-state="no-title-footer" data-background="#663399" data-background-transition="slide" data-transition="slide">
       <h1>Final</h1>
+      <small><a href="http://treyhunner.com/js-like-python">http://treyhunner.com/js-like-python</a></small>
       <p>
         <small><a href="http://treyhunner.com">Trey Hunner</a> / <a href="https://twitter.com/treyhunner">@treyhunner</a></small>
       </p>
