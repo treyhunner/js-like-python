@@ -49,7 +49,7 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
       <aside class="notes" data-markdown>
         My name is Trey.  I'm going to show you how JavaScript is becoming more like Python.
 
-        I will be going quickly and there are code examples on almost every slide.  I'll tweet a link to my slides later.
+        A word of warning: I will be going very quickly and there are code examples on almost every slide.
       </aside>
     </section>
 
@@ -171,7 +171,7 @@ console.log(`The year is ${date.getFullYear()}`);
         <aside class="notes" data-markdown>
           With Template strings you can now do string interpolation in JavaScript.
 
-          You create template strings using backticks.  Template strings interpolate using the current scope automatically, unlike Python's format method.
+          You create template strings using backticks.  Unlike Python's format method, template strings interpolate using the current scope automatically.
         </aside>
       </section>
       <section>
@@ -281,6 +281,26 @@ let date = new Date(...dateFields);
         </aside>
       </section>
       <section>
+        <h2>Combine Arrays</h2>
+        <p>
+        <pre class="python"><code data-trim>
+first = [1, 2]
+second = [3, 4]
+combined = first + second
+        </code></pre>
+        <pre class="javascript"><code data-trim>
+let first = [1, 2];
+let second = [3, 4];
+let combined = [...first, ...second];
+        </code></pre>
+        </p>
+        <aside class="notes" data-markdown>
+          You can also use the spread operator to unpack one array inside of another array.
+
+          In this example `combined` would be the array `[1, 2, 3, 4]`.
+        </aside>
+      </section>
+      <section>
         <h2>Rest Operator</h2>
         <p>
         <pre class="python"><code data-trim>
@@ -298,26 +318,6 @@ function mostDifference(...numbers) {
           This allows us to make functions that take a variable number of arguments.  For example our `mostDifference` function here takes any number of arguments.
 
           This code example shows both the "rest" operator used once and "spread" operator used twice.
-        </aside>
-      </section>
-      <section>
-        <h2>Combine Arrays</h2>
-        <p>
-        <pre class="python"><code data-trim>
-first = [1, 2]
-second = [3, 4]
-combined = first + second
-        </code></pre>
-        <pre class="javascript"><code data-trim>
-let first = [1, 2];
-let second = [3, 4];
-let combined = [...first, ...second];
-        </code></pre>
-        </p>
-        <aside class="notes" data-markdown>
-          You can also use this operator to unpack one array inside of another array.
-
-          In this example `combined` would be the array `[1, 2, 3, 4]`.
         </aside>
       </section>
     </section>
@@ -358,7 +358,7 @@ let [x, y, z] = coordinate;
         </code></pre>
         </p>
         <aside class="notes" data-markdown>
-          Just like Python, JavaScript now has iterable unpacking.  You can unpack arrays into multiple variables and you can also use this for multiple assignment and for swapping variables.
+          Just like Python, JavaScript now has iterable unpacking.  You can unpack arrays into multiple variables and you can also use this for multiple assignment and variable swapping.
 
           Here, x, y, and z would be 1, 4, and 2.
         </aside>
@@ -422,7 +422,7 @@ import {jsonify, memoize} from 'utils.js';
         <small><a href="http://treyhunner.com">Trey Hunner</a> / <a href="https://twitter.com/treyhunner">@treyhunner</a></small>
       </p>
       <aside class="notes" data-markdown>
-        That's all folks.
+        Feel free to reach out to me on Twitter if you have any questions.
       </aside>
     </section>
 
